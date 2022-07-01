@@ -1,3 +1,5 @@
+Note: For Angular project, use from VSCode, and for (API) .NET project use form VisualStudio 2022
+
 1. Download and install NodeJS version 14.16.1 by navigating to the following link
 https://nodejs.org/dist/v14.16.1/
 and click on "node-v14.16.1-x64.msi"
