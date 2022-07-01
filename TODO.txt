@@ -12,7 +12,7 @@ and click on "node-v14.16.1-x64.msi"
    install angular version 12 by the following command
 -> npm install -g @angular/cli@12
 
-4. verify the installtion by the following command
+4a. verify the installtion by the following command
 -> ng --version
 you should see 
 
@@ -39,6 +39,11 @@ Package                      Version
 @angular-devkit/core         12.1.2 (cli-only)
 @angular-devkit/schematics   12.1.2 (cli-only)
 @schematics/angular          12.1.2 (cli-only)
+
+4b. go to client folder in your terminal, and hit "npm install" this will install all node modules
+4c. verify angular project is runnig by the following command "ng serve -o" this opens a new browser and runs Angular project
+4d. if you run your API project from Visual Studio, then after you refresh your browser, you will see both my name and your name on the browser
+this verifies both Angular and API project are connected together
 
 5. Downlaod Postman app from the following url: https://www.postman.com/downloads/
 6. create an account and login into your account using Postman desktop application
