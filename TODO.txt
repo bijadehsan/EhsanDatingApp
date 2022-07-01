@@ -47,5 +47,8 @@ Note:
 10. Since we are using from http, rather than https, I have updated the postman collection and pushed that into
 the repository called "EhsanDatingApp.postman_collection", so you can import instead of Neil's (the teacher) postman collection described in lecture 16
 
+11. For you own practice, create another folder in another place, and just do as the instructor is saying to create the applications (API, client) and
+make them work together. But for EhsanDatingApp, please follow the above instructions
+
 
 
