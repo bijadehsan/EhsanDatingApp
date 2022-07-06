@@ -15,7 +15,7 @@
       "launchBrowser": false,
       "launchUrl": "swagger",
       // for development purpose we use from http only not https for our own convinient
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:7000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

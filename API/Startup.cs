@@ -56,8 +56,8 @@ namespace API
 
             app.UseRouting();
 
-            // Adding Cors to our Pipeline for our angular project with url http://localhost:4200
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+            // Adding Cors to our Pipeline for our angular project with url http://localhost:4300
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4300"));
 
             app.UseAuthorization();
 

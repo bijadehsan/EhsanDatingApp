@@ -7,25 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  testUsers: any;
+  users: any;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   // at the begining of a component this method ngOnInit() gets called always
-  ngOnInit(): void {
+  ngOnInit() {
     // we call our own method getUsers()
-    this.getTestUsers();
+    this.getUsers();
   }
 
   // getUsers method to call our API server to get list of users
-  getTestUsers() {
-    this.http.get('http://localhost:5000/api/users/test').subscribe(result => {
-      this.testUsers = result;
-      console.log(this.testUsers);
-    }, error => {
-      console.log(error);
+  getUsers() {
+    this.http.get('http://localhost:5000/api/users').subscribe({
+      next: response => this.users = response,
+      error:error=>console.log(error)
     })
   }
 }
