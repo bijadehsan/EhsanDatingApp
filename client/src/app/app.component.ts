@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   // getUsers method to call our API server to get list of users
   getUsers() {
-    this.http.get('http://localhost:5000/api/users').subscribe({
+    this.http.get('http://localhost:7000/api/users').subscribe({
       next: response => this.users = response,
       error:error=>console.log(error)
     })
