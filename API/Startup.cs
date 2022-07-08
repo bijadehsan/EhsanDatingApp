@@ -1,12 +1,10 @@
-using API.DataContext;
+using API.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-
 
 namespace API
 {
@@ -24,18 +22,23 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationService(_config);
+
+            services.AddIdentityService(_config);
+
 
             services.AddControllers();
-            services.AddDbContext<EhsanDataContext>(options =>
-            {
-                options.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
-            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
             });
             // adding Cors to the service to enable angular to call our APIs
             services.AddCors();
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +61,8 @@ namespace API
 
             // Adding Cors to our Pipeline for our angular project with url http://localhost:4300
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4300"));
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
